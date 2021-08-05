@@ -7,28 +7,26 @@ public class Student {
     private String lastName;
     private int year;
     private String studentID;
-    private String courses;
-    private int tuitionBalance;
+    private String courses = null;
+    private int tuitionBalance = 0;
     private int costOfCourse = 600;
     private static int id = 1000;
 
     //Constructor : Get student's f name and l name
     public Student() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter Student First Name : ");
+        System.out.print("Enter Student First Name : ");
         this.firstName = in.nextLine();
 
-        System.out.println("Enter Student Last Name : ");
+        System.out.print("Enter Student Last Name : ");
         this.lastName = in.nextLine();
 
-        System.out.println("1 - 1st Year\n2 - 2nd Year\n3 - 3rd Year\n4 - 4th Year\nEnter Student Year : ");
+        System.out.print("1 - 1st Year\n2 - 2nd Year\n3 - 3rd Year\n4 - 4th Year\nEnter Student Year : ");
         this.year = in.nextInt();
 
         setStudentId();
 
-        System.out.println(firstName + " " + lastName + " " + year +  " " +studentID);
-
-
+        System.out.println("Students Info : \n" + firstName + " " + lastName + " " + year + " " + studentID);
 
     }
 
@@ -36,6 +34,23 @@ public class Student {
     private void setStudentId() {
         id++;
         studentID = year + "" + id;
+    }
+
+    //Enroll courses
+    public void enroll() {
+        do {
+            System.out.print("Enter Course to enroll (Press Q to Exit) : ");
+            Scanner in = new Scanner(System.in);
+            String course = in.nextLine();
+            if (!course.equals("Q")) {
+                courses = courses + "\n" + course;
+                tuitionBalance = tuitionBalance + costOfCourse;
+            } else {
+                break;
+            }
+        } while (1 != 0);
+        System.out.println("Course Info : \nEnrolled In : " + courses);
+        System.out.println("Tuition Balance : " + tuitionBalance);
     }
 
 }
