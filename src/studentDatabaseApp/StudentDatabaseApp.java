@@ -5,6 +5,7 @@ public class StudentDatabaseApp {
         Student st1 = new Student();
         st1.enroll();
         st1.payTuition();
+        System.out.println(st1.toString());
 
     }
 }
