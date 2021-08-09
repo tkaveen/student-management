@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class StudentDatabaseApp {
     public static void main(String[] args) {
-
-
         //Ask how many students wish to add
         System.out.println("Enter Number of Students want to add : ");
         Scanner in = new Scanner(System.in);
